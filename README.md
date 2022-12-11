@@ -1,5 +1,8 @@
 # FlanxQuikkerJS
-A minimal JavaScript library for writing HTML DOM elements and CSS selectors.
+
+<div align="center"><img src="https://flanxquikker.github.io/main/asset/icon/favicon-198.png"></div>
+
+** A minimal JavaScript library for writing HTML DOM elements and CSS selectors. **
 
 ### Overview 🔭
 ```
