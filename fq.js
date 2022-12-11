@@ -20,7 +20,7 @@ const initial = 0;
 const none = "none";
 const root = "fq-root";
 
-// FQ UTILITY FUNCT8ONS
+// FQ UTILITY FUNCTIONS
 let out = (fq, parent) => {
     let body = document.querySelector("body");
     body.style.margin = 0;
