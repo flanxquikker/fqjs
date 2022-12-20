@@ -24,7 +24,7 @@ const table = "table";
 const spaceAround = "space-around";
 const spaceBetween = "space-between";
 
-// FQ UTILITY FUNCT8ONS
+// FQ UTILITY FUNCTIONS
 let out = (fq, parent) => {
     let body = document.querySelector("body");
     body.style.margin = 0;
