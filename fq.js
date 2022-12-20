@@ -4,7 +4,7 @@ v0.0.2
 
 - Flanx Quikker also known as FQJS is a JavaScript library which is the main objective is to write, style and function the webpage using only JavaScript that does not need to use multiple files and languages like fq & fq to achieve a better performance and also it can also integrate with other frameworks like Bootstrap, Tailwind etc.
 
-Created by Yerenzter
+@author Yerenzter
 */
 // fq BUILT-IN PROPERTY VALUE (IMMUTABLE)
 const block = "block";
