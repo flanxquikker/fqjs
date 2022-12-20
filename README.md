@@ -39,3 +39,15 @@ render([myText], root);
     </body>
 </html>
 ```
+
+Or via CDN
+
+```
+<html>
+    <body>
+        <div id="fq-root"></div>
+        <script src="https://www.quikkerjs.tk/lib/fq/fq.js" type="text/javascript"></script>
+        <script src="main.js" type="text/javascript"></script>
+    </body>
+</html>
+```
