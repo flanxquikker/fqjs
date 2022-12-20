@@ -24,6 +24,126 @@ const table = "table";
 const spaceAround = "space-around";
 const spaceBetween = "space-between";
 
+// fq BUILT-IN HTML element variables.
+const a = "a";
+const abbr = "abbr";
+const acronym = "acronym";
+const address = "address";
+const applet = "applet";
+const area = "area";
+const article = "article";
+const aside = "aside";
+const audio = "audio";
+const b = "b";
+const base = "base";
+const basefont = "basefont";
+const bdi = "bdi";
+const bdo = "bdo";
+const big = "big";
+const blockquote = "blockquote";
+const body = "body";
+const br = "br";
+const button = "button";
+const canvas = "canvas";
+const caption = "caption";
+const cite = "cite";
+const code = "code";
+const col = "col";
+const colgroup = "colgroup";
+const data = "data";
+const datalist = "datalist";
+const dd = "dd";
+const del = "del";
+const details = "details";
+const dfn = "dfn";
+const dialog = "dialog";
+const dir = "dir";
+const div = "div";
+const dl = "dl";
+const dt = "dt";
+const em = "em";
+const embed = "embed";
+const fieldset = "fieldset";
+const figcaption = "figcaption";
+const figure = "figure";
+const font = "font";
+const footer = "footer";
+const form = "form";
+const frame = "frame";
+const frameset = "frameset";
+const h1 = "h1";
+const h2 = "h2";
+const h3 = "h3";
+const h4 = "h4";
+const h5 = "h5";
+const h6 = "h6";
+const head = "head";
+const header = "header";
+const hr = "hr";
+const html = "html";
+const i = "i";
+const iframe = "iframe";
+const img = "img";
+const input = "input";
+const ins = "ins";
+const kbd = "kbd";
+const label = "label";
+const legend = "legend";
+const li = "li";
+const link = "link";
+const main = "main";
+const map = "map";
+const mark = "mark";
+const meta = "meta";
+const meter = "meter";
+const nav = "nav";
+const noframes = "noframes";
+const noscript = "noscript";
+const object = "object";
+const ol = "ol";
+const optgroup = "optgroup";
+const option = "option";
+const output = "output";
+const p = "p";
+const param = "param";
+const picture = "picture";
+const pre = "pre";
+const progress = "progress";
+const q = "q";
+const rp = "rp";
+const rt = "rt";
+const ruby = "ruby";
+const s = "s";
+const samp = "samp";
+const script = "script";
+const section = "section";
+const select = "select";
+const small = "small";
+const source = "source";
+const strike = "strike";
+const strong = "strong";
+const style = "style";
+const sub = "sub";
+const summary = "summary";
+const sup = "sup";
+const svg = "svg";
+const tbody = "tbody";
+const td = "td";
+const template = "template";
+const textarea = "textarea";
+const tfoot = "tfoot";
+const th = "th";
+const thead = "thead";
+const time = "time";
+const title = "title";
+const tr = "tr";
+const track = "track";
+const tt = "tt";
+const u = "u";
+const vars = "var";
+const video = "video";
+const wbr = "wbr";
+
 // FQ UTILITY FUNCTIONS
 let out = (fq, parent) => {
     let body = document.querySelector("body");
@@ -536,3 +656,13 @@ let loadJSON = (file) => {
 
     return json;
 };
+
+let loadJS = (file) => {
+    out({
+        html: {
+            elem: script,
+            src: file,
+            type: "text/javascript"
+        }
+    }, root);
+}
