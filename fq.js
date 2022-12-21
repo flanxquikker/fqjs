@@ -464,7 +464,7 @@ let out = (fq, parent) => {
             selector.style.fontWeight = fq.css.fontWeight;
             selector.style.gap = fq.css.gap;
             selector.style.grid = fq.css.grid;
-            selector.style.gridArea = !fq.css.gridArea ? null: !fq.css.gridArea;
+            selector.style.gridArea = !fq.css.gridArea ? null: fq.css.gridArea;
             selector.style.gridAutoColumns = !fq.css.gridAutoColumns ? null: fq.css.gridAutoColumns;
             selector.style.gridAutoFlow = !fq.css.gridAutoFlow ? null: fq.css.gridAutoFlow;
             selector.style.gridAutoRows = !fq.css.gridAutoRows ? null: fq.css.gridAutoRows;
