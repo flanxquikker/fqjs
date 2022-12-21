@@ -4,7 +4,7 @@ v0.0.2
 
 - Flanx Quikker also known as FQJS is a JavaScript library which is the main objective is to write, style and function the webpage using only JavaScript that does not need to use multiple files and languages like fq & fq to achieve a better performance and also it can also integrate with other frameworks like Bootstrap, Tailwind etc.
 
-@author Yerenzter
+Created by Yerenzter
 */
 // fq BUILT-IN PROPERTY VALUE (IMMUTABLE)
 const block = "block";
@@ -20,6 +20,7 @@ const inherit = "inherit";
 const initial = 0;
 const none = "none";
 const root = "fq-root";
+const scroll = "scroll";
 const table = "table";
 const spaceAround = "space-around";
 const spaceBetween = "space-between";
@@ -463,18 +464,18 @@ let out = (fq, parent) => {
             selector.style.fontWeight = fq.css.fontWeight;
             selector.style.gap = fq.css.gap;
             selector.style.grid = fq.css.grid;
-            selector.style.gridArea = fq.css.gridArea;
-            selector.style.gridAutoColumns = fq.css.gridAutoColumns;
-            selector.style.gridAutoFlow = fq.css.gridAutoFlow;
-            selector.style.gridAutoRows = fq.css.gridAutoRows;
-            selector.style.gridColumn = fq.css.gridColumn;
-            selector.style.gridColumnEnd = fq.css.gridColumnEnd;
-            selector.style.gridRowGap = fq.css.gridRowGap;
-            selector.style.gridRowStart = fq.css.gridRowStart;
-            selector.style.gridTemplate = fq.css.gridTemplate;
-            selector.style.gridTemplateAreas = fq.css.gridTemplateAreas;
-            selector.style.gridTemplateColumns = fq.css.gridTemplateColumns;
-            selector.style.gridTemplateRows = fq.css.gridTemplateRows;
+            selector.style.gridArea = !fq.css.gridArea ? null: !fq.css.gridArea;
+            selector.style.gridAutoColumns = !fq.css.gridAutoColumns ? null: fq.css.gridAutoColumns;
+            selector.style.gridAutoFlow = !fq.css.gridAutoFlow ? null: fq.css.gridAutoFlow;
+            selector.style.gridAutoRows = !fq.css.gridAutoRows ? null: fq.css.gridAutoRows;
+            selector.style.gridColumn = !fq.css.gridColumn ? null: fq.css.gridColumn;
+            selector.style.gridColumnEnd = !fq.css.gridColumnEnd ? null: fq.css.gridColumnEnd;
+            selector.style.gridRowGap = !fq.css.gridRowGap ? null: fq.css.gridRowGap;
+            selector.style.gridRowStart = !fq.css.gridRowStart ? null: fq.css.gridRowStart;
+            selector.style.gridTemplate = !fq.css.gridTemplate ? null: fq.css.gridTemplate;
+            selector.style.gridTemplateAreas = !fq.css.gridTemplateAreas ? null: fq.css.gridTemplateAreas;
+            selector.style.gridTemplateColumns = !fq.css.gridTemplateColumns ? null: fq.css.gridTemplateColumns;
+            selector.style.gridTemplateRows = !fq.css.gridTemplateRows ? null: fq.css.gridTemplateRows;
             selector.style.hangingPunctuation = fq.css.hangingPunctuation;
             selector.style.height = fq.css.height;
             selector.style.hypens = fq.css.hypens;
@@ -665,4 +666,4 @@ let loadJS = (file) => {
             type: "text/javascript"
         }
     }, root);
-}
+};
