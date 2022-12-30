@@ -1,12 +1,13 @@
 /*
-Flanx Quikker JavaScript Library.
+Flanx Quikker JavaScript Framework
 v0.0.2
 
-- Flanx Quikker also known as FQJS is a JavaScript library which is the main objective is to write, style and function the webpage using only JavaScript that does not need to use multiple files and languages like fq & fq to achieve a better performance and also it can also integrate with other frameworks like Bootstrap, Tailwind etc.
+- Flanx Quikker also known as FQJS is a JavaScript framework which is the main objective is to write, style and function the webpage using only JavaScript that does not need to use multiple files and languages like fq & fq to achieve a better performance and also it can also integrate with other frameworks like Bootstrap, Tailwind etc.
 
 Created by Yerenzter
 */
 // fq BUILT-IN PROPERTY VALUE (IMMUTABLE)
+const absolute = "absolute";
 const block = "block";
 const borderBox = "border-box";
 const center = "center";
@@ -19,6 +20,7 @@ const grid = "grid";
 const inherit = "inherit";
 const initial = 0;
 const none = "none";
+const relative = "relative";
 const root = "fq-root";
 const scroll = "scroll";
 const table = "table";
@@ -659,11 +661,17 @@ let loadJSON = (file) => {
 };
 
 let loadJS = (file) => {
-    out({
-        html: {
-            elem: script,
-            src: file,
-            type: "text/javascript"
-        }
-    }, root);
+    let head = document.querySelector("head");
+    let script = document.createElement("script");
+    script.setAttribute("src", file);
+    script.setAttribute("type", "text/javascript");
+    head.appendChild(script);
+};
+
+loadCSS = (file) => {
+    let head = document.querySelector("head");
+    let style = document.createElement("link");
+    style.setAttribute("href", file);
+    style.setAttribute("rel", "stylesheet");
+    head.appendChild(style);
 };
