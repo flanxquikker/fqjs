@@ -1,6 +1,6 @@
 # QuikkerJS
 
-<div align="center"><img src="https://www.quikkerjs.tk/main/asset/icon/fq.png" width="240" height="240"></div>
+<div align="center"><img src="main/asset/icon/fq.png" width="240" height="240"></div>
 <h1 align="center">Welcome to QuikkerJS</h1>
 <h4 align="center">0.0.3 (PRE_RELEASE)</h4>
 <br>
