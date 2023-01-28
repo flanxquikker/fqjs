@@ -9,3 +9,7 @@
 ## Overview
 
 QuikkerJS 003 is now the latest revision and version of QuikkerJS a JavaScript library, it is designed for rapid application development tool for develop static, dynamic websites and cross-platform web application for a single codebase.
+
+## CDN
+
+<a href="https://cdn.quikkerjs.tk/fq.js">QuikkerJS CDN</a>
