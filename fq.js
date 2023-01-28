@@ -128,9 +128,11 @@ class Widget {
                 elem_dlg_content.style.height = `${(height*100)/2}vh`;
             },
             setOkButtonColor: (color) => elem_dlg_action_ok.style.color = color,
+            setOkButtonFont: (font) => elem.style.fontFamily = font,
             setOnOk: (callback) => elem_dlg_action_ok.onclick = callback,
             setText: (text) => elem_dlg_content.textContent = text,
             setTitle: (title) => elem_dlg_title.textContent = title,
+            setTitleFont: (font) => elem.stylr.fontFamily = font,
             setTitleFontColor: (color) => elem_dlg_title.style.color = color,
             setTitleFontSize: (size) => elem.style.fontSize = `${size}px`,
             setWidth: (width) => elem.style.width = `${width*100}px`,
@@ -170,6 +172,7 @@ class Widget {
             setBorderColor: (border) => elem.style.borderColor = border,
             setBorderRadius: (border) => elem.style.borderRadius = `${border}px`,
             setColor: (color) => elem.style.color = color,
+            setFont: (font) => elem.style.fontFamily = font,
             setFontSize: (size) => elem.style.fontSize = `${size}px`,
             setHeight: (height) => elem.style.height = `${height}vh`,
             setMargin: (top, right, bottom, left) => elem.style.margin = `${top}em ${right}em ${bottom}em ${left}em`,
@@ -266,6 +269,7 @@ class Widget {
             el: () => elem,
             getText: () => elem.innerText,
             setColor: (color) => elem.style.color = color,
+            setFont: (font) => elem.style.fontFamily = font,
             setFontSize: (size) => elem.style.fontSize = `${size}`,
             setText: (text) => elem.textContent = text
         };
@@ -279,6 +283,7 @@ class Widget {
         let prop = {
             el: () => elem,
             setColor: (color) => elem.style.color = color,
+            setFont: (font) => elem.style.fontFamily = font,
             setFontSize: (size) => elem.style.fontSize = `${size}px`,
             setText: (text) => elem.textContent = text,
             setUrl: (url) => elem.href = url
@@ -330,6 +335,7 @@ class Widget {
             el: () => elem,
             getText: () => elem.innerText,
             setColor: (color) => elem.style.color = color,
+            setFont: (font) => elem.style.fontFamily = font,
             setFontSize: (size) => elem.style.fontSize = `${size}px`,
             setText: (text) => elem.textContent = text
         };
