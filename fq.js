@@ -63,31 +63,34 @@ class Widget {
         
         let elem = document.createElement("div");
         elem.style.display = "none";
-        elem.style.justifyContent = "center";
-        elem.style.alignItems = "center";
+        elem.style.justifyItems = "center";
+        elem.style.alignItems= "center";
         elem.style.width = "100vw";
         elem.style.height = "100vh";
         elem.style.backgroundColor = option == "NoDim" ? "#00000000" : option == "Dim" ? "#808080AA" : "#808080AA";
         elem.style.position = "fixed";
+        
         elem.style.zIndex = 9999;
         
         let elem_dlg = document.createElement("div");
         elem_dlg.style.display = "grid";
-        elem_dlg.style.justifyContent = "center";
-        elem_dlg.style.alignItems = "flex-start";
+        elem_dlg.style.justifyItems = "center";
+        elem_dlg.style.alignItems = "center";
         elem_dlg.style.width = "80vw";
         elem_dlg.style.height = "20vh";
+        elem_dlg.style.padding = "1em";
         elem_dlg.style.borderRadius = "4px";
         elem_dlg.style.backgroundColor = "#242424";
         elem_dlg.style.color = "#FFFFFF";
+        elem_dlg.overflowY = "scroll";
         elem.appendChild(elem_dlg);
         
         let elem_dlg_title = document.createElement("div");
         elem_dlg_title.style.display = "flex";
-        elem_dlg_title.style.justifyContent = "left";
+        elem_dlg_title.style.justifyContent = "center";
         elem_dlg_title.style.alignItems = "center";
         elem_dlg_title.style.width = "inherit";
-        elem_dlg_title.style.height = "vh";
+        elem_dlg_title.style.height = "5vh";
         elem_dlg_title.style.color = "#FFFFFF";
         elem_dlg_title.textContent = "Title";
         elem_dlg.appendChild(elem_dlg_title);
@@ -99,14 +102,38 @@ class Widget {
         elem_dlg_content.style.width = "inherit";
         elem_dlg_content.style.height = "10vh";
         elem_dlg_content.style.color = "#FFFFFF";
+        elem_dlg_content.style.overflowY = "scroll";
         elem_dlg.appendChild(elem_dlg_content);
+        
+        let elem_dlg_action = document.createElement("div");
+        elem_dlg_action.style.boxSizing = "border-box";
+        elem_dlg_action.style.display = "flex";
+        elem_dlg_action.style.justifyContent = "center";
+        elem_dlg_action.style.alignItems = "center";
+        elem_dlg_action.style.width = "inherit";
+        elem_dlg_action.style.height = "5vh";
+        elem_dlg.appendChild(elem_dlg_action);
+        
+        let elem_dlg_action_ok = document.createElement("h3");
+        elem_dlg_action_ok.textContent = "OK";
+        elem_dlg_action.appendChild(elem_dlg_action_ok);
         
         let prop = {
             el: () => elem,
+            addChild: (child) => elem_dlg_content.appendChild(child.el()),
             setBgColor: (color) => elem_dlg.style.backgroundColor = color,
             setBorderRadius: (border) => elem_dlg.style.borderRadius = `${border}px`,
+            setHeight: (height) => {
+                elem_dlg.style.height = `${height*100}vh`;
+                elem_dlg_content.style.height = `${(height*100)/2}vh`;
+            },
+            setOkButtonColor: (color) => elem_dlg_action_ok.style.color = color,
+            setOnOk: (callback) => elem_dlg_action_ok.onclick = callback,
             setText: (text) => elem_dlg_content.textContent = text,
             setTitle: (title) => elem_dlg_title.textContent = title,
+            setTitleFontColor: (color) => elem_dlg_title.style.color = color,
+            setTitleFontSize: (size) => elem.style.fontSize = `${size}px`,
+            setWidth: (width) => elem.style.width = `${width*100}px`,
             show: () => elem.style.display = "grid",
             hide: () => elem.style.display = "none"
         };
@@ -245,6 +272,33 @@ class Widget {
 
         return prop;
     }
+    Hyperlink(option) {
+        let elem = document.createElement("a");
+        elem.style.textDecoration = option == "NoUnderline" ? "none" : "underline";
+        
+        let prop = {
+            el: () => elem,
+            setColor: (color) => elem.style.color = color,
+            setFontSize: (size) => elem.style.fontSize = `${size}px`,
+            setText: (text) => elem.textContent = text,
+            setUrl: (url) => elem.href = url
+        };
+        
+        return prop;
+    }
+    Image() {
+        let elem = document.createElement("img");
+        
+        let prop = {
+            el: () => elem,
+            getImage: (image) => elem.src = image,
+            setBorderRadius: (border) => elem.style.borderRadius = `${border}px`,
+            setHeight: (height) => elem.style.height = `${height}px`,
+            setWidth: (width) => elem.style.width = `${width}px`
+        };
+        
+        return prop;
+    }
     Layout(justify, alignment) {
         let elem = document.createElement("div");
         elem.style.display = "grid";
@@ -262,6 +316,7 @@ class Widget {
             setMargin: (...margin) => elem.style.margin = margin,
             setOnClick: (callback) => elem.onclick = callback,
             setOpacity: (opacity) => elem.style.opacity = opacity,
+            setPadding: (...padding) => elem.style.padding = `${padding}em`,
             setTransition: (...transition) => elem.style.transition = transition,
             setWidth: (width) => !width ? elem.style.width = "inherit" : elem.style.width = `${width*100}vw`,
         };
